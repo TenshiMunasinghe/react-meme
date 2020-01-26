@@ -6,10 +6,10 @@ class App extends Component {
 	state = {};
 	render() {
 		return (
-			<React.Fragment>
+			<>
 				<Header />
 				<MemeGenerator />
-			</React.Fragment>
+			</>
 		);
 	}
 }
