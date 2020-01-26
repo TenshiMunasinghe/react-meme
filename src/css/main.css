@@ -141,7 +141,7 @@ main form input[type="submit"] {
   font-weight: bolder;
   text-transform: uppercase;
   text-shadow:  0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black, 0 0 0.2vw black;
-  font-size: 2vw;
+  font-size: 1.7vw;
 }
 
 .meme img {
@@ -150,19 +150,19 @@ main form input[type="submit"] {
 }
 
 h2.top {
-  top: 2vw;
+  top: 1.3vw;
   position: absolute;
-  width: 40%;
-  left: 30%;
+  width: 50%;
+  left: 25%;
   max-width: 100%;
   word-wrap: break-word;
 }
 
 h2.bottom {
-  bottom: 2vw;
+  bottom: 1.3vw;
   position: absolute;
-  width: 40%;
-  left: 30%;
+  width: 50%;
+  left: 25%;
   max-width: 100%;
   word-wrap: break-word;
 }
