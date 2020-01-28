@@ -1,4 +1,5 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
+import {TextField, Button} from "@material-ui/core"
 
 class MemeGenerator extends Component {
 	state = {
@@ -6,49 +7,56 @@ class MemeGenerator extends Component {
 		bottomText: "",
 		randomImg: "http://i.imgflip.com/1bij.jpg",
 		allMemeImgs: []
-	};
+	}
 
 	componentDidMount = () => {
 		fetch("https://api.imgflip.com/get_memes")
 			.then(res => res.json())
-			.then(res => this.setState({allMemeImgs: res.data.memes}));
-	};
+			.then(res => this.setState({allMemeImgs: res.data.memes}))
+	}
 
 	handleChange = e => {
-		const {value, name} = e.target;
-		this.setState({[name]: value});
-	};
+		const {value, name} = e.target
+		this.setState({[name]: value})
+	}
 
 	generateMeme = e => {
-		e.preventDefault();
-		let {randomImg, allMemeImgs} = this.state;
-		const index = Math.floor(Math.random() * allMemeImgs.length);
-		randomImg = allMemeImgs[index].url;
-		this.setState({randomImg});
-	};
+		e.preventDefault()
+		let {randomImg, allMemeImgs} = this.state
+		const index = Math.floor(Math.random() * allMemeImgs.length)
+		randomImg = allMemeImgs[index].url
+		this.setState({randomImg})
+	}
 
 	render() {
-		const {topText, bottomText, randomImg} = this.state;
+		const {topText, bottomText, randomImg} = this.state
 		return (
 			<main>
 				<form onSubmit={this.generateMeme}>
 					<div className='inputs'>
-						<input
-							type='text'
+						<TextField
 							name='topText'
+							variant='filled'
+							label='Top Text'
 							value={topText}
-							placeholder='top text'
 							onChange={this.handleChange}
 						/>
-						<input
-							type='text'
+						<TextField
 							name='bottomText'
+							variant='filled'
+							label='Bottom Text'
 							value={bottomText}
-							placeholder='bottom text'
 							onChange={this.handleChange}
 						/>
 					</div>
-					<input type='submit' value='Generate' id='submitBtn' />
+					<Button
+						type='submit'
+						id='submitBtn'
+						variant='contained'
+						size='large'
+						color='primary'>
+						Generate
+					</Button>
 				</form>
 
 				<div className='meme'>
@@ -57,8 +65,8 @@ class MemeGenerator extends Component {
 					<h2 className='bottom'>{bottomText}</h2>
 				</div>
 			</main>
-		);
+		)
 	}
 }
 
-export default MemeGenerator;
+export default MemeGenerator
